@@ -1,0 +1,14 @@
+pencil$bút chì
+phone$điện thoại
+search$tìm kiếm
+setting$cài đặt
+select$chọn
+item$mặt hàng
+calendar$lịch
+date$ngày
+music$nhạc
+down$xuống
+up$lên
+photo$ảnh
+in$vào
+out$ra
