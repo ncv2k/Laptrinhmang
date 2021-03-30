@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package laptrinhmang.quanlinganhangtcp;
+package laptrinhmang.quanlinganhangudp;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -29,12 +29,13 @@ public class client {
             System.out.println("1. Nap tien");
             System.out.println("2. Rut tien");
             System.out.println("3. Kiem tra so du");
-            System.out.println("4. Thoat");
+            System.out.println("4. Lich su giao dich");
+            System.out.println("5. Thoat");
             System.out.print("Lua chon cua ban: ");
             chose = sc.nextLine() + " ";
             DatagramPacket pack_send = new DatagramPacket(chose.getBytes(), chose.getBytes().length, ip, 28);
             myClient.send(pack_send);
-            if(chose.equals("4 ")) return;
+            if(chose.equals("5 ")) return;
             if(chose.equals("1 ")||chose.equals("2 ")){
                 System.out.print("Nhap so tien: ");
                 chose = sc.nextLine() + " ";
@@ -44,6 +45,12 @@ public class client {
             byte[] byte_receive = new byte[1024];
             DatagramPacket pack_receive = new DatagramPacket(byte_receive, byte_receive.length);
             myClient.receive(pack_receive);
+            if(chose.equals("4 ")){
+                String[] histoty = new String(pack_receive.getData()).split("/0");
+                for(String tmp: histoty){
+                    System.out.println(tmp);
+                }
+            }
             System.out.println(new String(pack_receive.getData()));
         }
     }

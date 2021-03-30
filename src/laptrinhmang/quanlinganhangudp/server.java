@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package laptrinhmang.quanlinganhangtcp;
+package laptrinhmang.quanlinganhangudp;
 
 import java.io.IOException;
 import static java.lang.Integer.parseInt;
@@ -17,7 +17,7 @@ import java.util.ArrayList;
  * @author vnncv
  */
 public class server {
-    private static ArrayList<String> history = new ArrayList<String>();
+    private static String history="";
     private static int balance = 0;
     
     private static String check_Balance(){
@@ -26,7 +26,7 @@ public class server {
     
     private static String deposit(int x){
         balance +=x;
-        history.add("Deposit " + x);
+        history = history + "Deposit " + x + "/0";
         return "Successful deposit " + x;
     }
     
@@ -35,7 +35,7 @@ public class server {
             return "Insufficient balance";
         }
         balance -= x;
-        history.add("Withdrawal " + x);
+        history = history + "Withdrawal " + x + "/0";
         return "Successful withdrawal " + x;
     }
     
@@ -52,7 +52,8 @@ public class server {
                 case 1: myServer.receive(pack_receive); byte_send = deposit(parseInt(new String(pack_receive.getData()).split(" ")[0])).getBytes(); break;
                 case 2: myServer.receive(pack_receive); byte_send = withdrawal(parseInt(new String(pack_receive.getData()).split(" ")[0])).getBytes(); break;
                 case 3: byte_send = check_Balance().getBytes(); break;
-                case 4: return;
+                case 4: byte_send = history.getBytes(); break;
+                case 5: return;
                 default: return;
             }
             DatagramPacket pack_send = new DatagramPacket(byte_send, byte_send.length, pack_receive.getAddress(), pack_receive.getPort());
