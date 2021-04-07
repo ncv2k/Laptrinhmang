@@ -17,12 +17,8 @@ import java.net.Socket;
  */
 public class server {
     
-    private static int sum(int a, int b){
-        return a + b;
-    }
-    
-    private static int mul(int a, int b){
-        return a * b;
+    private static int cal(int a, int b, int c){
+        return c==1?a + b:a*b;
     }
     
     public static void main(String[] args) throws IOException{
@@ -36,13 +32,10 @@ public class server {
             int pheptinh = is.readInt();
             if(pheptinh == 0){
                 return;
+            } else {
+                os.writeInt(cal(num1, num2, pheptinh));
             }
-            if(pheptinh == 1){
-                os.writeInt(sum(num1, num2));
-            }
-            if (pheptinh == 2){
-                os.writeInt(mul(num1, num2));
-            }
+            
         }
     }
 }

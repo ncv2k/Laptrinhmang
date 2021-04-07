@@ -17,7 +17,7 @@ import java.util.Scanner;
  */
 public class client {
     
-    public static String pheptinh(int a){
+    public static String pheptinhtoString(int a){
         return (a==1)?"+":"x";
     }
     
@@ -42,7 +42,7 @@ public class client {
             if(pheptinh == 0){
                 return;
             }
-            System.out.println("Ket qua: " + num1 + pheptinh(pheptinh) + num2 + "= " + dis.readInt());
+            System.out.println("Ket qua: " + num1 + pheptinhtoString(pheptinh) + num2 + "= " + dis.readInt());
         }
     }
 }
