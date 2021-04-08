@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Bai2RMI;
+package RMI_Test.Bai2RMI;
 
 import java.rmi.Naming;
 import java.util.Scanner;
