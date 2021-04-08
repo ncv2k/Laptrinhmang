@@ -17,7 +17,7 @@ import java.rmi.server.*;
  */
 public class PhongRMI implements PhongItf, Serializable{
     ArrayList<Phong> listPhong;
-    public void PhongRMI(){
+    public void init(){
         listPhong = new ArrayList<Phong>();
         listPhong.add(new Phong("01", "Thanh Xuan", "Trong", "2"));
         listPhong.add(new Phong("02", "Ha Dong", "Khong Trong", "1"));
@@ -58,8 +58,6 @@ public class PhongRMI implements PhongItf, Serializable{
                     for(Phong tmp: listPhong){
                         if(tmp.getLoai().equals(nd)){
                             tmp.Show();
-                            sc.nextLine();
-                            return;
                         }
                     }
                     break;
@@ -69,8 +67,6 @@ public class PhongRMI implements PhongItf, Serializable{
                     for(Phong tmp: listPhong){
                         if(tmp.getDiaChi().equals(nd)){
                             tmp.Show();
-                            sc.nextLine();
-                            return;
                         }
                     }
                     break;

@@ -13,8 +13,9 @@ import java.util.ArrayList;
  * @author ncv
  */
 public interface PhongItf extends Remote{
-    public void Search();
-    public void ShowAll();
-    public void Thue();
+    public void init() throws RemoteException;
+    public void Search() throws RemoteException;
+    public void ShowAll() throws RemoteException;
+    public void Thue()throws  RemoteException;
     
 }

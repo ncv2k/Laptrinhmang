@@ -23,6 +23,7 @@ public class Client {
             Scanner sc = new Scanner(System.in);
             System.out.println("Ket noi toi Server");
             PhongItf Phong = (PhongItf)Naming.lookup("rmi://localhost:2805/QLPhong");
+            Phong.init();
             int c;
             while(true){
                 System.out.println("--------- QUAN LY PHONG ---------");
@@ -34,7 +35,7 @@ public class Client {
                 switch(c){
                     case 1: Phong.Search(); break;
                     case 2: Phong.ShowAll(); break;
-                    case 3: Phong.Thue();
+                    case 3: Phong.Thue(); break;
                     case 4: return;
                     default: continue;
                 }
