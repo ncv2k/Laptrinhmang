@@ -20,7 +20,7 @@ public class Client {
                 Scanner sc = new Scanner(System.in);
                 System.out.println("Ket noi den Server...");
                 nguyento nt = (nguyento) Naming.lookup("rmi://127.0.0.1:2805/nguyento");
-                System.out.println("Nhap n:");
+                System.out.print("Nhap n:");
                 int n = sc.nextInt();
                 System.out.println("Cac so nguyen to nho hon " + n + " la: " + nt.songuyento(n));
             }

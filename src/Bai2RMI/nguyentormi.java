@@ -20,7 +20,7 @@ public class nguyentormi implements nguyento{
     
     public String songuyento(int num){
         String snt="";
-        for(int i=2; i<=num; i++){
+        for(int i=1; i<=num; i++){
             if(check(i, 2 )) snt = snt + i +" ";
         }
         return snt;
