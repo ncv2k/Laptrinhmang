@@ -1,0 +1,4 @@
+001$Nguyen Cong Vinh $Ha Noi$Nam$10
+002$Nguyen Van Binh$Vinh Phuc$Nam$9.5
+003$Nguyen Thi Mai$Ca Mau$Nu$8.2
+004$Nguyen Van Manh$Hai Phong$Nam$5.2
